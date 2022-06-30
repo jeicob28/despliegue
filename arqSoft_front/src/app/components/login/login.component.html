@@ -1,0 +1,45 @@
+<div class="form_Login" >  
+    <div *ngIf="mostrarFormulario">
+        <form *ngIf="!(autorizacion.isLoggedIn() | async)" [formGroup]="form" (ngSubmit)="onSubmit()" >
+
+            <div class="form-group">
+                <div class="header-text">
+                    <h3>Iniciar sesión</h3>
+                    <img class ="iconoU" src="/assets/imagenes/iconU.png">
+                </div>
+                    <input type="email" placeholder="Correo electronico" class="form-control" [ngClass]="{'invalid': inputIsValid('email')}" formControlName="email" aria-describedby="emailHelp">
+                <div>
+                    <p *ngIf="getInputError('required')"></p>
+                    <p *ngIf="getInputError('email')"></p>
+                </div>                
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="password" placeholder="Contraseña" class="form-control" [ngClass]="{'invalid': inputIsValid('password')}" formControlName="password" aria-describedby="emailHelp">
+                <div>
+                    <p *ngIf="getInputError('required')"></p>
+                    <p *ngIf="getInputError('password')"></p>
+                </div>
+            </div>
+            <div class="container-button">
+                <button type="submit" class="form_login_button">Enviar</button>
+            </div>
+             
+            <form>
+                <div class="container-enlaces">
+                    <a [routerLink]="['/registro']">¿No tienes una cuenta?</a>
+                    <a [routerLink]="['/olvideContrasena']">¿Olvido su contraseña?</a>
+                </div>
+                <br>
+            </form>
+        </form>
+        
+        <h1  *ngIf="autorizacion.isLoggedIn() | async">Logueado exitosamente!</h1>
+    </div>
+    <br>
+    <div *ngIf="mostrarSpinner" class="spinner-border text-primary " role="status">
+        <span class="visually-hidden"></span>
+    </div>
+</div>
+
+    

@@ -1,0 +1,54 @@
+<form class="form_historico-Admin" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h6>Historico Administrador</h6>
+    <br>
+    <br>
+    <div class="select_margin mb-3 row text">
+        <label for="exampleInputEmail1" class="form-label text col">Nombre de Técnico: </label>
+        <select class="custom-select form-control" id="inputGroupSelect01" formControlName="nombtecnico">
+           <option>Seleccione el técnico:</option>
+           <option *ngFor="let tecnico of tecnicos">{{tecnico}}</option>
+        </select>
+        <div class="w-100"></div>
+     </div>
+
+     <div>
+        <button type="submit" class="btn btn-primary">Consultar</button>
+    </div>
+
+    <br>
+    <div class="select_margin mb-3 row text">
+        <label for="exampleInputEmail1" class="form-label text col" >Ordenes abiertas: </label>
+            <select class="custom-select" id="inputGroupSelect01" formControlName="ordenAbierta" (click)="informacionOrdenAbierta()">
+                <option>Seleccione Orden de servicio:</option>
+                <option *ngFor="let orden of ordenAbiertas">{{orden.ordenServicio}}</option>
+            </select>
+        <div class="w-100"></div>
+    </div>
+    <br>
+
+    <div>
+        <label class="form-label">Diagnostico</label>
+        <br>
+        <br>
+        <textarea class="tamano_textarea" aria-label="With textarea">{{infoDiagnostico}}</textarea>
+    </div>
+  
+    <div class="select_margin mb-3 row text">
+        <label for="exampleInputEmail1" class="form-label text col">Ordenes Cerradas: </label>
+        <select class="custom-select" id="inputGroupSelect01" formControlName="ordenCerrada" (click)="informacionOrdenCerrada()" >
+            <option>Seleccione Orden de servicio:</option>
+            <option *ngFor="let ordenCerrada of ordenCerradas">{{ordenCerrada.ordenServicio}}</option>
+        </select>
+        <div class="w-100"></div>
+    </div>
+
+    <div>
+        <label class="form-label">Diagnostico</label>
+        <br>
+        <br>
+        <textarea class="tamano_textarea" aria-label="With textarea">{{infoDiagnosticoCerrada}}</textarea>
+    </div>
+    <br>
+    <br>
+
+</form>

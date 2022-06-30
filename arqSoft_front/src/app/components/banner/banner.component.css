@@ -1,0 +1,38 @@
+.banner{
+	
+	width:100%;
+	height:600px;
+	background-size:100% 100%;
+	-moz-animation:banner 10s alternate 0 infinite;
+    -webkit-animation:banner 10s alternate 0 infinite;
+    animation:banner 10s infinite;
+	animation-direction:alternate;
+	
+}
+@keyframes banner{
+	0%,30%{
+		background-image:url("/assets/imagenes/banner1.png");
+		opacity:1;   
+	}
+	31%,34%{
+		opacity:1;
+	}
+	35%,65%{
+		background-image:url("/assets/imagenes/banner2.png");
+		opacity:1;   
+	}
+	66%,69%{
+		opacity:1;
+	}
+	70%,100%{
+		opacity:1;
+        background-image:url("/assets/imagenes/banner3.png");
+	}
+    /* 66%,69%{
+		opacity:0.1;
+	}   
+	70%,100%{
+		opacity:1;
+        background-image:url("/assets/imagenes/bannerM.png");
+	} */
+}

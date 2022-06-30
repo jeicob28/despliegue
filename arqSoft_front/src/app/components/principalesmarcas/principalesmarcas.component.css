@@ -1,0 +1,23 @@
+.titulo{
+    font-weight: bold;
+    font-family: Arial;
+    padding: 6px;
+    border-top:rgba(231, 112, 15, 0.87) 2px solid;
+    
+ 
+}
+.cartas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 8px;
+    
+}
+.borde1{
+    border-bottom: rgba(231, 112, 15, 0.87) 2px solid;  
+}
+
+.container{
+    max-width: 1820px !important;
+}

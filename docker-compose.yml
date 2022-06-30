@@ -1,0 +1,23 @@
+version: "2.1"
+services:
+
+  backend_python:
+    build: ./arqsoft_backend
+    ports:
+      - "40100:5000"
+    volumes:
+      - ./arqsoft_backend:/app
+    restart: always
+    container_name: arqsoft_backend
+    # command: python main.py
+
+  frontend:
+    build: ./arqSoft_front
+    #image: frontendArsoft
+    ports:
+      - 40200:4200
+    volumes:
+      - ./arqsoft_front:/app
+    restart: always
+    container_name: arqSoft_front
+
